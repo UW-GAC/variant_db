@@ -24,26 +24,12 @@ DESIREDFIELDS=$(for i in $( cat $DESIRED ); do
 	fgrep $i <<< "$ALLFIELDS"
 done)
 
-ROWINDEX=$( awk '{print $1}' <<< "$DESIREDFIELDS" )
-
-# the column headings start with #, but the subsequent rows don't have a
-# leading space. So $1 of row 2 corresponds to $2 of row 1. I need to add 1 to
-# the field index for printing the header rows.
-
-HEADERINDEX=$(for i in $ROWINDEX; do 
-        echo $(( $i + 1 )) 
-done)
+COLUMNINDEX=$( awk '{print $1}' <<< "$DESIREDFIELDS" )
 
 #add ', $' to INDEX values for awk print statement
-HEADERPRINT=$( sed 's/^/$/g; s/ /, $/g' <<< $HEADERINDEX )
-ROWPRINT=$( sed 's/^/$/g; s/ /, $/g' <<< $ROWINDEX )
+ROWPRINT=$( sed 's/^/$/g; s/ /, $/g' <<< $COLUMNINDEX )
 
 
 # now print the fields listed in $TOPRINT
-awk -v OFS='\t' '{
-if (NR ==1) 
-	print '"$HEADERPRINT"';
-else 
-	print '"$ROWPRINT"' 
-}; NR == '$NUMBER' {exit}' $FILENAME
+awk -v OFS='\t' '{ print '"$ROWPRINT"' }; NR == '$NUMBER' {exit}' FS='\t' $FILENAME
 
