@@ -1,0 +1,14 @@
+#############
+
+my intent is to use an .env file for passwords, etc:
+https://drivendata.github.io/cookiecutter-data-science/
+then use dotenv package in R: https://www.r-project.org/nosvn/pandoc/dotenv.html
+and python-dotenv in python: https://github.com/theskumar/python-dotenv
+
+##############
+
+schema def is in src/mysql/schema.sql
+
+#############
+
+

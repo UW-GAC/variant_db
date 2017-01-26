@@ -1,0 +1,1 @@
+[1]CHROM [2]POS [3]REF [4]ALT [5]FILTER CADD_phred ENCODE_TFBS_score ENCODE_TFBS_cells ENCODE_Dnase_score ENCODE_Dnase_cells FANTOM5_enhancer_permissive FANTOM5_enhancer_robust ANNOVAR_ensembl_precedent_consequence ANNOVAR_ensembl_precedent_gene unique_variant
