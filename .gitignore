@@ -1,7 +1,11 @@
 # don't commit .env files - place for passwords
 .env
 
-## vi-related files
+# ignore results or data directories
+/results
+/data
+
+# vi-related files
 *~
 *.swp
 *.swo
