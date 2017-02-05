@@ -1,2 +1,4 @@
+tmvariants
+----------
 
-[![Travis-CI Build Status](https://travis-ci.org/UW-GAC/variant_db.svg?branch=master)](https://travis-ci.org/UW-GAC/variant_db)
+This is the first R package for the TOPMed Variant Annotation database project. Things will firm up soon.
