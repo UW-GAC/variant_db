@@ -1,10 +1,10 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 
-language: R
-before_install:
-        - cd src/R_code/tmvariants/
-sudo: false
-cache: packages
+#language: R
+#before_install:
+#        - cd src/R_code/tmvariants/
+#sudo: false
+#cache: packages
 
 # And for the python integration testing, uncomment this:
 # 
@@ -14,3 +14,23 @@ cache: packages
 # # command to install dependencies
 # install: "pip install -r requirements.txt"
 # # command to run tests
+# 
+# based on .travis.yml from feather
+sudo: false
+cache: packages
+
+matrix:
+  include:
+
+  - language: r
+    before_install:
+    - cd src/R_code/tmvariants/
+
+  - language: python
+    python:
+    - "3.4"
+    before_install:
+    - cd src/python_code/
+    install: "pip install -r requirements.txt"
+    script: python -m unittest
+
