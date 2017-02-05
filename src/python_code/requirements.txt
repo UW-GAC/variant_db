@@ -8,6 +8,5 @@ mysql-connector-python-rf==2.2.1
 packaging==16.8
 pylint==1.6.5
 pyparsing==2.1.10
-python-dotenv==0.6.2
 six==1.10.0
 wrapt==1.10.8
