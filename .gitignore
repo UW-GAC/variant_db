@@ -1,5 +1,6 @@
-# don't commit .env files - place for passwords
+# don't commit files that may have passwords
 .env
+*.cnf
 
 # ignore results or data directories
 /results
