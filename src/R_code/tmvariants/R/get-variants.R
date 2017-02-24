@@ -1,6 +1,6 @@
 #' Get variants in range
 #'
-#' @param con a database connection object
+#' @param con a database connection object (from dbR::dplyr-connect or dbR::get_db_mysql)
 #' @param chromosome the chromosome - must be 1-22, X, or Y
 #' @param start the first locus to look for a variant
 #' @param end the last locus to look for a variant (default N/A)
@@ -13,9 +13,9 @@
 #'
 #' @export
 
-get_variants <- function(con, chromosome, start, end = N/A, isdplyr = FALSE) {
+get_variants <- function(con, chromosome, start, end = NULL, isdplyr = FALSE) {
   # check arguments
-  if (!is(con, "MySQLConnection") %or% !is(con, "src_mysql")) {
+  if (!is(con, "MySQLConnection") || !is(con, "src_mysql")) {
     msg <- paste(con, "is not a valid database connection")
     stop(msg)
   }
@@ -34,14 +34,14 @@ get_variants <- function(con, chromosome, start, end = N/A, isdplyr = FALSE) {
   }
 
   # if it's a MySQLConnection, get variants that way THIS IS A STUB
-  variants <- data.frame(chromosome = "", 
-                         position = "", 
+  variants <- data.frame(chromosome = "",
+                         position = "",
                          reference = "",
                          alternate = "")
 
   # if it's a dplyr connection, get variants that way THIS IS A STUB
-  variants <- data.frame(chromosome = "", 
-                         position = "", 
+  variants <- data.frame(chromosome = "",
+                         position = "",
                          reference = "",
                          alternate = "")
 
