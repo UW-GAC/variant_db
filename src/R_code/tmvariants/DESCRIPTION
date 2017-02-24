@@ -7,6 +7,8 @@ Depends: R (>= 3.2.3)
 License: MIT
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.0.0
+RoxygenNote: 6.0.1
 Suggests: testthat,
     lintr
+Imports: dbR
+Remotes: UW-GAC/dbR
