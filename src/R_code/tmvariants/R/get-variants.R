@@ -8,8 +8,12 @@
 #' @return A data frame with chromosome, position, reference allele, and alternate allele for each variant within the range (including start and end loci)
 #'
 #' @examples
+#' \dontrun{
 #' single_locus <- get_variants(con = con, chromosome = 1, start = 13980)
+#' }
+#' \dontrun{
 #' range <- get_variants(con = con, chromosome = 1, start = 10000, end = 12000)
+#' }
 #'
 #' @export
 
