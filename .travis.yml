@@ -7,6 +7,7 @@ matrix:
   # R for travis: https://docs.travis-ci.com/user/languages/r
   - language: r
     before_install: cd src/R_code/tmvariants/
+    cache: packages
 
   - language: python
     python: 3.4
